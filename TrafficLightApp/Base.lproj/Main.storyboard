@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLightApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Road" translatesAutoresizingMaskIntoConstraints="NO" id="PBv-pJ-0Pd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyk-pJ-sgH">
+                                <rect key="frame" x="72" y="460" width="231" height="199"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                                <state key="normal" title="Start" backgroundImage="redButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LPx-MY-1O9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="2SX-z8-9qK">
+                                <rect key="frame" x="65" y="89" width="245" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2SX-z8-9qK" secondAttribute="height" multiplier="210:223" id="evS-yS-N2D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-Xt-Wvh">
+                                <rect key="frame" x="0.0" y="424" width="107" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PBv-pJ-0Pd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3EI-eH-fDJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0lK-Xt-Wvh" secondAttribute="trailing" constant="118" id="7Rw-NF-MkL"/>
+                            <constraint firstItem="2SX-z8-9qK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="9rh-fz-Hy4"/>
+                            <constraint firstItem="2SX-z8-9qK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="71" id="Ak1-pU-4ww"/>
+                            <constraint firstAttribute="trailing" secondItem="PBv-pJ-0Pd" secondAttribute="trailing" id="Bv1-9K-HXC"/>
+                            <constraint firstItem="0lK-Xt-Wvh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="118" id="FDk-J1-pJA"/>
+                            <constraint firstItem="2SX-z8-9qK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="49" id="Ffb-LG-Gbo"/>
+                            <constraint firstItem="PBv-pJ-0Pd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="O6j-9W-mX0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2SX-z8-9qK" secondAttribute="trailing" constant="62" id="OSC-eW-kZo"/>
+                            <constraint firstItem="nyk-pJ-sgH" firstAttribute="top" secondItem="0lK-Xt-Wvh" secondAttribute="bottom" constant="23" id="Ofk-U5-0SI"/>
+                            <constraint firstItem="0lK-Xt-Wvh" firstAttribute="top" secondItem="2SX-z8-9qK" secondAttribute="bottom" constant="85" id="PG9-cq-dEM"/>
+                            <constraint firstItem="0lK-Xt-Wvh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QY3-5T-cXn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2SX-z8-9qK" secondAttribute="trailing" constant="49" id="SaL-XV-yB4"/>
+                            <constraint firstItem="0lK-Xt-Wvh" firstAttribute="top" secondItem="2SX-z8-9qK" secondAttribute="bottom" constant="85" id="VZu-Tt-ZV6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nyk-pJ-sgH" secondAttribute="trailing" constant="56" id="bKc-ZX-SKd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PBv-pJ-0Pd" secondAttribute="bottom" id="cxU-kL-HA7"/>
+                            <constraint firstItem="0lK-Xt-Wvh" firstAttribute="top" secondItem="2SX-z8-9qK" secondAttribute="bottom" constant="75" id="fd1-3q-PgO"/>
+                            <constraint firstItem="2SX-z8-9qK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="gjO-6R-M28"/>
+                            <constraint firstAttribute="trailing" secondItem="0lK-Xt-Wvh" secondAttribute="trailing" constant="268" id="law-4k-7ht"/>
+                            <constraint firstItem="nyk-pJ-sgH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="56" id="o1Z-vW-mhS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nyk-pJ-sgH" secondAttribute="bottom" constant="8" id="trT-ES-ag4"/>
+                            <constraint firstItem="nyk-pJ-sgH" firstAttribute="top" secondItem="0lK-Xt-Wvh" secondAttribute="bottom" constant="8" id="ubr-xX-K2k"/>
+                            <constraint firstItem="nyk-pJ-sgH" firstAttribute="top" secondItem="2SX-z8-9qK" secondAttribute="bottom" constant="111" id="wxB-4h-X5p"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="0lK-Xt-Wvh" id="Bz5-0i-UWZ"/>
+                        <outlet property="startStopBtn" destination="nyk-pJ-sgH" id="rRG-cg-gVt"/>
+                        <outlet property="trafficLight" destination="2SX-z8-9qK" id="fPH-Wf-xFz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Road" width="1674" height="1902"/>
+        <image name="TrafficLight" width="550" height="900"/>
+        <image name="redButton" width="1353" height="1353"/>
+    </resources>
 </document>
